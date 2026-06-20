@@ -17,6 +17,8 @@ const routes = {
         "INSERT INTO users (name, email, password) VALUES($1, $2, $3)",
         [parsedBody.name, parsedBody.email, hashPassword],
       );
+
+      res.statusCode = 201;
       return {
         headers: { "Content-Type": "application/json" },
         responseBody: JSON.stringify({
