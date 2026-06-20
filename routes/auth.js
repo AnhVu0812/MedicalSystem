@@ -74,6 +74,7 @@ const routes = {
         res.end("email or password is incorrect");
       }
     } catch (error) {
+      console.error(error);
       res.statusCode = 500;
       res.end("Internal server error");
     }
