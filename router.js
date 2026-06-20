@@ -35,7 +35,7 @@ const matchRoutes = (requestPath, pattern) => {
       params[patternParts[i].slice(1)] = requestParts[i];
     } else if (requestParts[i] !== patternParts[i]) return null;
   }
-  return params;
+  return { params };
 };
 
 const handleRequest = (req, res) => {
