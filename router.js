@@ -12,6 +12,7 @@ const protectedRoutes = [
   "GET /appointments",
   "POST /appointments",
   "PUT /appointments/:id",
+  "PUT /appointments/:id/cancel",
   "DELETE /appointments/:id",
 
   "GET /doctors",
