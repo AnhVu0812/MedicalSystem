@@ -71,7 +71,7 @@ const handleRequest = (req, res) => {
       const match = matchRoutes(req.method + " " + parsedUrl.pathname, pattern);
       if (match) {
         matchedHandler = allRoutes[pattern];
-        matchedParams = match.params;
+        matchedParams = params;
         break;
       }
     }
