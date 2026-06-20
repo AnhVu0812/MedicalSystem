@@ -167,6 +167,17 @@ const routes = {
         return;
       }
 
+      const checkApoointmentsBeforeDelete = await pool.query(
+        "SELECT doctor_id, date FROM appointments WHERE user_id = $1",
+        [userID],
+      );
+
+      if (checkApoointmentsBeforeDelete.rows.length !== 0) {
+        res.statusCode = 403;
+        res.end("You can not delete user still have appointments");
+        return;
+      }
+
       const deleteUsers = await pool.query(
         "DELETE FROM users WHERE id = $1 RETURNING * ",
         [userID],
