@@ -11,7 +11,7 @@ if (process.env.DATABASE_URL) {
   };
 } else {
   config = {
-    host: process.env.DB_HOST,
+    host: process.env.DB_HOST || "localhost",
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
     user: process.env.DB_USER,

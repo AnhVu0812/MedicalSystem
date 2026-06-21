@@ -7,11 +7,11 @@ services:
     image: postgres:16-alpine # Dùng bản Postgres 16 siêu nhẹ
     container_name: medical_postgres_container
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123456 # <-- Điền password DB hiện tại của ông vào đây
-      POSTGRES_DB: medical_booking     # <-- Điền tên Database của ông vào đây
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD} # <-- Điền password DB hiện tại của ông vào đây
+      POSTGRES_DB: ${DB_NAME}     # <-- Điền tên Database của ông vào đây
     ports:
-      - "5433:5432" # Mở cổng 5432 từ container ra máy thật để Postman/DBeaver chọc vào được
+      - "5433:5432" # Mở cổng 5432 từ container ra máy thật để Postman/DBearer chọc vào được
     volumes:
       - postgres_data:/var/lib/postgresql/data # Lưu dữ liệu xuống ổ cứng máy thật, tắt container không bị mất data
 
@@ -22,12 +22,12 @@ services:
     ports:
       - "3000:3000" # Mở cổng 3000 ra ngoài để ông test Postman
     environment:
-      - DB_USER=postgres
-      - DB_PASSWORD=123456 # <-- Trùng với password ở trên
-      - DB_HOST=postgres_db            # <-- ĐIỂM CHÍ MẠNG: Không dùng 'localhost', phải dùng tên service của DB trong Docker!
-      - DB_NAME=medical_booking
-      - DB_PORT=5432
-      - SECRET=your_jwt_secret_here    # <-- Điền mã secret JWT của ông vào đây
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD} # <-- Trùng với password ở trên
+      - DB_HOST=${DB_HOST}           # <-- ĐIỂM CHÍ MẠNG: Không dùng 'localhost', phải dùng tên service của DB trong Docker!
+      - DB_NAME=${DB_NAME}
+      - DB_PORT=${DB_PORT}
+      - SECRET=${SECRET}    # <-- Điền mã secret JWT của ông vào đây
     depends_on:
       - postgres_db # Bảo con App đợi con Database khởi động xong xuôi thì mới được chạy
 
