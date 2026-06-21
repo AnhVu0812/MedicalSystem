@@ -1,0 +1,486 @@
+{
+  "info": {
+    "_postman_id": "0f29d278-32e6-411e-a347-a0350722b6d9",
+    "name": "Medical Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43952358",
+    "_collection_link": "https://go.postman.co/collection/43952358-0f29d278-32e6-411e-a347-a0350722b6d9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Napv\",\r\n    \"email\": \"napv@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/register",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"napv@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/login",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "Appointments",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0czc}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"napv@gmail.com\",\r\n    \"password\": \"123456\"\r\n}"
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/appointments",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "appointments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Doctors",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0czc}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-25\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/doctors",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "doctors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Appointments",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0czc}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-26\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/appointments",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "appointments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Appointments",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0czc}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-26\"\r\n}"
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/appointments/4",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "appointments",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Appointments-cancel",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0czc}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-26\"\r\n}"
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/appointments/4/cancel",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "appointments",
+                "4",
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Appointments",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0czc}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-26\"\r\n}"
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/appointments/4",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "appointments",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Appointments",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0uzi}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-21\"\r\n}"
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/admin/appointments",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "appointments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0uzi}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-21\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/admin/users",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0uzi}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"anhvuadmin\",\r\n    \"email\": \"anhvuadmin@gmail.com\",\r\n    \"password\": \"08122004vun\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/admin/register",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Appointments-status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{supabase_service_role_api_key_0uzi}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"confirmed\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/admin/appointments/5/status",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "appointments",
+                "5",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Users",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{supabase_service_role_api_key_0uzi}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"usertest\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://medical-booking-api-rj8z.onrender.com/admin/users/3",
+              "protocol": "https",
+              "host": [
+                "medical-booking-api-rj8z",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "admin",
+                "users",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0czc",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0uzi",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0uzi",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_16k4",
+      "secret": true
+    }
+  ]
+}
